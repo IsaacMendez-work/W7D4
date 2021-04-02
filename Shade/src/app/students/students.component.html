@@ -1,16 +1,14 @@
 <!-- What we have in this component is assembled here, but must be added to app.component.html to render on the page. -->
-
-<!-- Using <div>{{expression}}</div> syntax to use the class being pushed from students.component.ts in the templateUrl. -->
-<h2>{{StudentVariable.age}}</h2>
-<div>
-    <label for='feedback'>Feedback: </label>
-    <!-- [(ngModel)] is Angular's two-way data binding syntax. You must opt-in to FormsModule in app.module.ts to run this. -->
-    <input id='feedback' [(ngModel)]='StudentVariable.feedback' placeholder='Please provide feedback'>
-    <!-- Here [(ngModel)] binds the StudentVariable.feedback property to the HTML textbox so that data can flow in both directions: from the property to the textbox, and from the textbox back to the property. -->
-</div>
-
-<ul>
-    <li *ngFor='let studentList of StudentArray'>
-        <span>{{studentList.age}}</span>
-    </li>
-</ul>
+<h1>Group Listed by Ranking</h1>
+    <ul class="studentComponentProperty">
+        <!-- *ngFor is Angular's repeater directive. It repeats the host element (in the below case, an <li></li> tag) for each element in  a list (in this case, the list is studentComponentProperty) -->
+        <li 
+        *ngFor='let StudentListVariable of studentComponentProperty' 
+        [class.selected]="StudentListVariable === selectedStudent"
+        (click)='onSelect(StudentListVariable)'>
+            <p>
+                {{StudentListVariable.name}} is {{StudentListVariable.age}}. 
+            </p>
+        </li>
+    </ul>
+<student-detail-component-selector [StudentListVariable]="selectedStudent"></student-detail-component-selector>

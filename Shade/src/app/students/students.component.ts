@@ -9,20 +9,28 @@ import { StudentConstant } from '../fAkePI'
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.css']
 })
-export class StudentsComponent implements OnInit { 
+export class StudentsComponentExport implements OnInit { 
   // What we export from here gets imported elsewhere, viz. the AppModule via students.component.html
   // All components are also declared in app.module.ts to render
-  StudentVariable: StudentInterface = {
-    ranking: 1,
-    name: 'Marquis',
-    age: 31,
-    feedback: 'Smart, but talks too much!',
-  }
-  StudentArray = StudentConstant;
+  studentComponentProperty = StudentConstant;
+  selectedStudent?: StudentInterface;
+  // StudentListVariable: StudentInterface = {
+  //   ranking: 1,
+  //   name: 'Marquis',
+  //   age: 31,
+  //   feedback: 'Smart, but talks too much!',
+  // }
+
+  // StudentArray = StudentConstant;
+  // selectedStudent?: StudentInterface;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(StudentListVariable: StudentInterface): void {
+    this.selectedStudent = StudentListVariable;
   }
 
 }
