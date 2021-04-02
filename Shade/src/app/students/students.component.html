@@ -1,4 +1,16 @@
 <!-- What we have in this component is assembled here, but must be added to app.component.html to render on the page. -->
 
-<!-- Using <div>{{expression}}</div> syntax in the .html  -->
-<h2>{{StudentInterface.age}}</h2>
+<!-- Using <div>{{expression}}</div> syntax to use the class being pushed from students.component.ts in the templateUrl. -->
+<h2>{{StudentVariable.image}}</h2>
+<div>
+    <label for='feedback'>Feedback: </label>
+    <!-- [(ngModel)] is Angular's two-way data binding syntax. You must opt-in to FormsModule in app.module.ts to run this. -->
+    <input id='feedback' [(ngModel)]='StudentVariable.feedback' placeholder='Please provide feedback'>
+    <!-- Here [(ngModel)] binds the StudentVariable.feedback property to the HTML textbox so that data can flow in both directions: from the property to the textbox, and from the textbox back to the property. -->
+</div>
+
+<ul>
+    <li *ngFor='let '>
+        <span></span>
+    </li>
+</ul>
