@@ -18,7 +18,7 @@ export class StudentsComponent implements OnInit {
     age: 31,
     feedback: 'Smart, but talks too much!',
   }
-  heroes = StudentConstant;
+  StudentArray = StudentConstant;
 
   constructor() { }
 

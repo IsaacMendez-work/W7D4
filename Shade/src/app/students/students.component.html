@@ -1,7 +1,7 @@
 <!-- What we have in this component is assembled here, but must be added to app.component.html to render on the page. -->
 
 <!-- Using <div>{{expression}}</div> syntax to use the class being pushed from students.component.ts in the templateUrl. -->
-<h2>{{StudentVariable.image}}</h2>
+<h2>{{StudentVariable.age}}</h2>
 <div>
     <label for='feedback'>Feedback: </label>
     <!-- [(ngModel)] is Angular's two-way data binding syntax. You must opt-in to FormsModule in app.module.ts to run this. -->
@@ -10,7 +10,7 @@
 </div>
 
 <ul>
-    <li *ngFor='let '>
-        <span></span>
+    <li *ngFor='let studentList of StudentArray'>
+        <span>{{studentList.age}}</span>
     </li>
 </ul>

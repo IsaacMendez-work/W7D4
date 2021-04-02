@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'; // <-- [(ngModel)] lives here
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
